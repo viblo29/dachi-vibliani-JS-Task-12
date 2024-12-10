@@ -32,8 +32,8 @@ Promise.all([
   .catch((error) => console.log(error));
 
 Promise.race([
-  RandomDelayPromise(`Task 3, 1st Promise:`),
-  RandomDelayPromise(`Task 3, 2nd Promise:`),
+  RandomDelayPromise(`Task 3, 1st Promise is faster:`),
+  RandomDelayPromise(`Task 3, 2nd Promise is faster:`),
 ])
   .then((result) => {
     console.log(result);
@@ -60,6 +60,5 @@ Promise.allSettled([task4(`Task 4, 1st Promise`), task4(`Task 4, 2nd Promise`), 
     (results) => {
     console.log(results);
   }
-)
-.catch((error) => console.log(error));
+);
 
