@@ -1,15 +1,21 @@
 // Task 1
 
-let randomPromise = new Promise((resolve, reject) => {
+function randomPromise() { 
+  return new Promise((resolve, reject) => {
   let delay = Math.floor(Math.random() * 2000) + 1000;
   let outcome = Math.random() < 0.5;
+  let seconds = Math.floor(delay / 1000);
+  setTimeout(() => {
   if (outcome) {
-    resolve(`Resolved`);
+    resolve(`Resolved (Time took: ${seconds} second)`);
   } else {
-    reject(`Rejected`);
+    reject(`Rejected (Time took: ${seconds} second)`);
   }
+ }, delay);
+  
 });
-randomPromise
+}
+randomPromise()
   .then((result) => console.log(result))
   .catch((error) => console.log(error));
 
